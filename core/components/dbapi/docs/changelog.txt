@@ -1,5 +1,6 @@
 Changelog for dbapi.
 
-dbapi 1.0.0-pl (March 7, 2011)
+dbapi 1.0.0-pl (March 8, 2011)
 ====================================
+- Add optional plugin activation to setup.
 - Initial beta release.

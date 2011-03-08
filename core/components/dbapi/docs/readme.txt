@@ -2,7 +2,7 @@
 Extension: dbapi
 --------------------
 Version: 1.0.0-pl
-Released: March 7, 2011
+Released: March 8, 2011
 Since: March 7, 2011
 Author: Jason Coward <jason@modx.com>
 
