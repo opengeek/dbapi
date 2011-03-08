@@ -1,0 +1,5 @@
+Changelog for dbapi.
+
+dbapi 1.0.0-pl (March 7, 2011)
+====================================
+- Initial beta release.
