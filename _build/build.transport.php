@@ -3,10 +3,7 @@
  * @package dbapi
  * @subpackage build
  */
-$mtime = microtime();
-$mtime = explode(" ", $mtime);
-$mtime = $mtime[1] + $mtime[0];
-$tstart = $mtime;
+$tstart = microtime(true);
 set_time_limit(0);
 
 /* define package */
@@ -83,7 +80,7 @@ $builder->setPackageAttributes(array(
 
 $builder->pack();
 
-$tend= $modx->getMicroTime();
+$tend= microtime(true);
 $totalTime= ($tend - $tstart);
 $totalTime= sprintf("%2.4f s", $totalTime);
 

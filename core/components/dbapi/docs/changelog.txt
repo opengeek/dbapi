@@ -1,5 +1,7 @@
 Changelog for dbapi.
 
+- Remove calls to deprecated xPDO->getMicroTime()
+
 dbapi 1.0.0-pl (March 8, 2011)
 ====================================
 - Add optional plugin activation to setup.
