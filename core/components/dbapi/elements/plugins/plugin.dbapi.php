@@ -8,3 +8,4 @@
  */
 $modx->addPackage('modx.dbapi', $modx->getOption('components_path', $scriptProperties, MODX_CORE_PATH . 'components/') . 'dbapi/model/');
 $modx->getService('db', 'DBAPI');
+return;

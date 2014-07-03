@@ -1,5 +1,6 @@
 Changelog for dbapi.
 
+- Prevent cluttering error log in MODX 2.3.x
 - Remove calls to deprecated xPDO->getMicroTime()
 
 dbapi 1.0.0-pl (March 8, 2011)
