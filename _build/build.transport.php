@@ -83,7 +83,7 @@ $builder->setPackageAttributes(array(
 
 $builder->pack();
 
-$tend= $modx->getMicroTime();
+$tend= microtime(true);
 $totalTime= ($tend - $tstart);
 $totalTime= sprintf("%2.4f s", $totalTime);
 

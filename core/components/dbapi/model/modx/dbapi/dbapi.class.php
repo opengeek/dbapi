@@ -99,12 +99,12 @@ class DBAPI {
      * @access public
      */
     public function connect($host= '', $dbase= '', $uid= '', $pwd= '', $persist= 0) {
-        $tstart= $this->xpdo->getMicroTime();
+        $tstart= microtime(true);
         if (!$this->conn= $this->xpdo->connect(array (PDO::ATTR_PERSISTENT => $persist ? true : false))) {
             $this->xpdo->log(xPDO::LOG_LEVEL_FATAL,"Failed to create the database connection!");
             exit;
         } else {
-            $tend= $this->xpdo->getMicroTime();
+            $tend= microtime(true);
             $totaltime= $tend - $tstart;
             $this->isConnected= true;
             $this->xpdo->queryTime= $this->xpdo->queryTime + $totaltime;
@@ -142,13 +142,13 @@ class DBAPI {
      * @access public
      */
     public function query($sql) {
-        $tstart= $this->xpdo->getMicroTime();
+        $tstart= microtime(true);
         $result= $this->xpdo->query($sql);
         if (!$result) {
             $this->xpdo->log(xPDO::LOG_LEVEL_ERROR, 'Execution of a query to the database failed: ' . $sql . "\n" . print_r($this->xpdo->errorInfo(), true) . "\n" . ($this->xpdo->getDebug() === true ? print_r(debug_backtrace(), true) : ''));
         }
         $this->affectedRows= $this->getRecordCount($result);
-        $tend= $this->xpdo->getMicroTime();
+        $tend= microtime(true);
         $totaltime= $tend - $tstart;
         $this->xpdo->queryTime= $this->xpdo->queryTime + $totaltime;
         $this->xpdo->executedQueries= $this->xpdo->executedQueries + 1;
@@ -269,13 +269,13 @@ class DBAPI {
      * @return boolean Result of query.
      */
     public function exec($sql) {
-        $tstart= $this->xpdo->getMicroTime();
+        $tstart= microtime(true);
         $result= $this->xpdo->exec($sql);
         if ($result === false) {
             $this->xpdo->log(xPDO::LOG_LEVEL_ERROR, 'Execution of a query to the database failed: ' . $sql . "\n" . print_r($this->xpdo->errorInfo(), true));
         }
         $this->affectedRows= $result;
-        $tend= $this->xpdo->getMicroTime();
+        $tend= microtime(true);
         $totaltime= $tend - $tstart;
         $this->xpdo->queryTime= $this->xpdo->queryTime + $totaltime;
         $this->xpdo->executedQueries= $this->xpdo->executedQueries + 1;
