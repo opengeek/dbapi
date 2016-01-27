@@ -1,5 +1,7 @@
 Changelog for dbapi.
 
+dbapi 1.0.2-pl (January 27, 2016)
+====================================
 - Fix plugin event activation defect in resolver
 
 dbapi 1.0.1-pl (July 3, 2014)
